@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btHTML"
+            android:text="HTML"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btDiscar"
+            android:text="DISCAR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btLigar"
+            android:text="LIGAR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btCpt"
+            android:text="compartilhar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btEmail"
+            android:text="E-MAIL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btPonto"
+            android:text="ponto no mapa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btRota"
+            android:text="Rota no Mapa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btSMS"
+            android:text="SMS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btYoutube"
+            android:text="Youtube"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btFoto"
+            android:text="Foto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>
