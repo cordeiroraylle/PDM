@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/llOptions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RadioGroup
+            android:id="@+id/rgEscolhas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RadioButton
+                android:id="@+id/bt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HDPI">
+
+        </RadioButton>
+
+        <RadioButton
+                android:id="@+id/bt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="LDPI">
+
+        </RadioButton>
+        <RadioButton
+                android:id="@+id/bt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="MDPI">
+
+        </RadioButton>
+
+        <RadioButton
+                android:id="@+id/bt4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="XHDPI">
+
+        </RadioButton>
+        <RadioButton
+                android:id="@+id/bt5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="XXHDPI">
+
+        </RadioButton>
+
+        <RadioButton
+                android:id="@+id/bt6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="XXXDPI">
+
+        </RadioButton>
+    </RadioGroup>
+
+
+</LinearLayout>
