@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btMensagem"
+        android:text="Mensagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+    <Button
+        android:id="@+id/btInput"
+        android:text="Input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+    <Button
+        android:id="@+id/btData"
+        android:text="Data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+    <Button
+        android:id="@+id/btHora"
+        android:text="Hora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+    <Button
+        android:id="@+id/btValores"
+        android:text="Faixa de Valores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+    <Button
+        android:id="@+id/btEscolha"
+        android:text="Escolha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+    <Button
+        android:id="@+id/btUnico"
+        android:text="Único"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+    <Button
+        android:id="@+id/btVarios"
+        android:text="Vários"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+</LinearLayout>
