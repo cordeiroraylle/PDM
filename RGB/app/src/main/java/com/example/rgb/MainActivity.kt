@@ -53,6 +53,12 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(receiver2,filter)
     }
 
+    override fun onPause() {
+        super.onPause()
+        unregisterReceiver(receiver)
+        unregisterReceiver(receiver2)
+    }
+
     inner class UnlockReceiver2: BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             this@MainActivity.tvR.text = "Red"
