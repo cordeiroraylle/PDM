@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp">
+
+        <TextView
+            android:layout_marginRight="10dp"
+            android:textSize="32sp"
+            android:text="Tarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+         </TextView>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="32sp"
+            android:text="Prioridade"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        </TextView>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textSize="32sp"
+            android:text="Status"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp">
+
+        <ListView
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/lvTarefas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="60dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
+    <TextView
+        android:textSize="17dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="*☆.¸.☆ Raylle Cordeiro - PDM 2020.1 ☆.¸.☆*" />
+
+</RelativeLayout>
