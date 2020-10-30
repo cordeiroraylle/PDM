@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivImagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="8"
+        android:src="@drawable/ic_img4"
+        />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btRegar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_shape"
+            android:paddingHorizontal="12sp"
+            android:text="Iniciar rega"
+            android:textColor="#FFF"></Button>
+
+        <Button
+            android:id="@+id/btParar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_shape"
+            android:paddingHorizontal="12sp"
+            android:text="Parar rega"
+            android:textColor="#FFF"></Button>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="Verifique como a sua plantinha está"
+        android:textAlignment="center"
+        android:textColor="#616161"
+        android:textSize="18dp"
+        android:textStyle="italic">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12sp"
+        android:gravity="center"
+        android:text="Raylle Cordeiro - PDM 2020.1"
+        android:textColor="#616161"
+        android:textStyle="bold">
+
+    </TextView>
+
+</LinearLayout>
