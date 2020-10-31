@@ -51,6 +51,7 @@ Voltando ao firebase, faça os passos seguintes:
 !["Figura 15"](./img/img_14.jpg)
 
 Feito isso, vá para o Android Studio, clique em "Tools" > "Firebase" > "Realtime Firebase" > "Save and retrieve data"
+
 !["Figura 16"](./img/img_15.jpg)
 !["Figura 17"](./img/img_16.jpg)
 
@@ -60,13 +61,16 @@ Você deve clicar em "Conect to Firebase" e escolher o projeto que acabou de cri
 
 
 Após isso você deve ter a seguinte tela e o seu aplicativo android já deve estar vinculado ao firebase e podemos começar a construir a nossa aplicação.
+
 !["Figura 20"](./img/img_19.jpg)
 
 
 O contexto do aplicativo é que ele exiba o estado do solo de uma planta, através de uma imagem e de um texto. Assim, teremos um Image View para exibir a imagem e um Text View para o texto. Também teremos dois botões na aplicação que acionariam uma bomba d'água (enviando o estado de "on" ou "off" para o firebase). Definimos também uma imagem padrão para ser exibida, caso não haja dados do solo no firebase sendo exibidos na aplicação, o que resulta na tela abaixo:
 
 !["Figura 21"](./img/img_2.jpg)
+
 Após isso, na nossa actitivy principal, iremos criar uma variável lateinit para os componentes criados e os resgatar através do método findViewByID:
+
 ``` (change):
 package com.example.esp8266_firebase
 
