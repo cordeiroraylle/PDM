@@ -42,9 +42,9 @@ Iremos usar uma empty activity.
 !["Figura 12"](./img/img_1.jpg)
 
 Ao criarmos o projeto teremos o nome do pacote na MainActivity
-``` (kotlin)>
-package com.example.esp8266_firebase
-```
+
+`package com.example.esp8266_firebase`
+
 Voltando ao firebase, faça os passos seguintes:
 !["Figura 13"](./img/img_12.jpg)
 !["Figura 14"](./img/img_13.jpg)
@@ -71,7 +71,7 @@ O contexto do aplicativo é que ele exiba o estado do solo de uma planta, atrav�
 
 Após isso, na nossa actitivy principal, iremos criar uma variável lateinit para os componentes criados e os resgatar através do método findViewByID:
 
-``` (kotlin):
+```kotlin
 package com.example.esp8266_firebase
 
 import ...
@@ -93,7 +93,7 @@ Class MainActivity : AppCompatActivity() {
     }     
 ```
 Para que possamos inserir os dados no firebase precisamos criar uma instância para isso:
-``` (kotlin):
+```kotlin
 var database = FirebaseDatabase.getInstance().reference
 ```
 Para atribuir um valor em uma posição qualquer do Database basta que façamos o seguinte:
@@ -103,7 +103,7 @@ database.setValue("IFPB")
 
 Entretanto, para os fins da aplicação teremos os campos "bomba", "leitura" e "status". Como dito anteriormente, iremos enviar o valor de "on" e "off" para o campo "bomba" do firease através do clique do botão, assim: 
 
-``` (kotlin):
+```kotlin
  btRegar.setOnClickListener(){
     database.child("bomba").setValue("on")
     Toast.makeText(this,"Rega Iniciada",Toast.LENGTH_SHORT).show()
@@ -112,7 +112,7 @@ Entretanto, para os fins da aplicação teremos os campos "bomba", "leitura" e "
 ```
 !["Figura 24"](./img/img_24.jpg)
 
-``` (kotlin):
+```kotlin
  btParar.setOnClickListener(){
     database.child("bomba").setValue("off")
     Toast.makeText(this,"Rega Finalizada",Toast.LENGTH_SHORT).show()
@@ -141,7 +141,7 @@ class Dados {
 ```
 Para ler os valores do firebase iremos criar instancia para o ValueEventListner, implementenado dois métodos como abaixo:
 
-``` (kotlin):
+```kotlin
 var getdata = object : ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
             }
@@ -161,13 +161,13 @@ var getdata = object : ValueEventListener{
 Usamos o Map para pegarmos uma lista com todas as strings disponíveis e assim podermos exibir os valores de status e leitura (como inteiro).
 
 Após isso é importante usar os métodos addValueEventListener() e addListenerForSingleValueEvent() para ler dados em um caminho e detectar as alterações, assim, adicionando um ValueEventListener ao DatabaseReference. Então ainda na nossa função onCreate iremos adicionar o seguinte código:
-``` (kotlin):
+```kotlin
 database.addValueEventListener(getdata)
 database.addListenerForSingleValueEvent(getdata)
 ```
 
 Como dito antes, o valor do status implicará numa mudança de imagem na aplicação. Para isso, criamos uma função chamada setImage que obedece as seguintes condições:
-``` (kotlin):
+```kotlin
 fun setImage( status : String){
         val img = ivImagem
         when(status){
