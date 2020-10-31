@@ -1,11 +1,11 @@
-## Projeto PDM - Firebase
+Projeto PDM - Firebase
+
+# Projeto PDM - Firebase
 
 Esse projeto consiste em um aplicativo que envia e recebe dados através do [Firebase](https://rockcontent.com/br/blog/firebase/). 
 
-O recebimento dos dados pode ser observado através de uma mensagem na tela e imagens. O envio é feito por meio de botões no aplicativo. 
+O recebimento dos dados pode ser observado através de uma mensagem na tela e imagens. O envio é feito por meio de botões no aplicativo. Desta forma, a primeira coisa a ser feita é entrar no site do Firebase (clicando [aqui](https://firebase.google.com)) e logar na sua conta do Google. Após isso você deverá clicar na opção abaixo:
 
-Desta forma, a primeira coisa a ser feita é entrar no site do Firebase (clicando aqui) e logar na sua conta do Google. Após isso você deverá clicar na opção abaixo:
--- !["Figura 1"](./img/img_01.jpeg)
 
 Escolha o nome do seu projeto e clique em continuar 
 -- img_04
