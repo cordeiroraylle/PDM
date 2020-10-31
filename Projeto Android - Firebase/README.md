@@ -33,30 +33,38 @@ Feito isso, o próximo passo é vincular o nosso aplicativo com o Firebase. Para
 Rolando toda a página podemos ver os aplicativos vinculados a esse peojeto. No caso não há nenhum e devemos clicar na opção de Android, ele irá redirecionar para uma tela de registro do app.
 
 !["Figura 10"](./img/img_10.jpg)
+
 !["Figura 11"](./img/img_11.jpg)
 
 
 Com isso, devemos agora criar o projeto no Android Studio.
 
-Iremos usar uma empty activity. 
+Iremos usar uma empty activity.
+
 !["Figura 12"](./img/img_1.jpg)
 
 Ao criarmos o projeto teremos o nome do pacote na MainActivity
 
-`package com.example.esp8266_firebase`
+```package com.example.esp8266_firebase```
 
 Voltando ao firebase, faça os passos seguintes:
+
 !["Figura 13"](./img/img_12.jpg)
+
 !["Figura 14"](./img/img_13.jpg)
+
 !["Figura 15"](./img/img_14.jpg)
 
 Feito isso, vá para o Android Studio, clique em "Tools" > "Firebase" > "Realtime Firebase" > "Save and retrieve data"
 
 !["Figura 16"](./img/img_15.jpg)
+
 !["Figura 17"](./img/img_16.jpg)
 
 Você deve clicar em "Conect to Firebase" e escolher o projeto que acabou de criar no firebase.
+
 !["Figura 18"](./img/img_17.jpg)
+
 !["Figura 19"](./img/img_18.jpg)
 
 
@@ -92,14 +100,16 @@ Class MainActivity : AppCompatActivity() {
           this.tvStatus = findViewById(R.id.tvStatus)
     }     
 ```
+
 Para que possamos inserir os dados no firebase precisamos criar uma instância para isso:
+
 ```kotlin
 var database = FirebaseDatabase.getInstance().reference
 ```
+
 Para atribuir um valor em uma posição qualquer do Database basta que façamos o seguinte:
-```
-database.setValue("IFPB")
-```
+
+```database.setValue("IFPB")```
 
 Entretanto, para os fins da aplicação teremos os campos "bomba", "leitura" e "status". Como dito anteriormente, iremos enviar o valor de "on" e "off" para o campo "bomba" do firease através do clique do botão, assim: 
 
@@ -110,6 +120,7 @@ Entretanto, para os fins da aplicação teremos os campos "bomba", "leitura" e "
  }
  
 ```
+
 !["Figura 24"](./img/img_24.jpg)
 
 ```kotlin
@@ -119,6 +130,7 @@ Entretanto, para os fins da aplicação teremos os campos "bomba", "leitura" e "
  }
 
 ```
+
 !["Figura 25"](./img/img_25.jpg)
 
 Vale salientar que desta maneira o valor que será inserido irá substituir o valor anterior. Se quisermos manter os valores enquanto adicionamos novos, para o mesmo "filho", devemos trabalhar com uma key.
@@ -126,7 +138,8 @@ Vale salientar que desta maneira o valor que será inserido irá substituir o va
 Para ser mais fácil de gerenciar os dados (de leitura e status) iremos criar uma classe para eles. Para isso devemos ir em "File" > "New" > "Kotlin file/ Class" ou criar uma classe interna na nossa Main Activity.
 
 A classe criada foi a seguinte:
-```(kotlin):
+
+```kotlin
 package com.example.esp8266_firebase
 
 class Dados {
@@ -139,6 +152,7 @@ class Dados {
     }
 }
 ```
+
 Para ler os valores do firebase iremos criar instancia para o ValueEventListner, implementenado dois métodos como abaixo:
 
 ```kotlin
@@ -158,15 +172,18 @@ var getdata = object : ValueEventListener{
             }
         }
 ```
+
 Usamos o Map para pegarmos uma lista com todas as strings disponíveis e assim podermos exibir os valores de status e leitura (como inteiro).
 
 Após isso é importante usar os métodos addValueEventListener() e addListenerForSingleValueEvent() para ler dados em um caminho e detectar as alterações, assim, adicionando um ValueEventListener ao DatabaseReference. Então ainda na nossa função onCreate iremos adicionar o seguinte código:
+
 ```kotlin
 database.addValueEventListener(getdata)
 database.addListenerForSingleValueEvent(getdata)
 ```
 
 Como dito antes, o valor do status implicará numa mudança de imagem na aplicação. Para isso, criamos uma função chamada setImage que obedece as seguintes condições:
+
 ```kotlin
 fun setImage( status : String){
         val img = ivImagem
