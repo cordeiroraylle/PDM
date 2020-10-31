@@ -124,7 +124,6 @@ Entretanto, para os fins da aplicação teremos os campos "bomba", "leitura" e "
 Vale salientar que desta maneira o valor que será inserido irá substituir o valor anterior. Se quisermos manter os valores enquanto adicionamos novos, para o mesmo "filho", devemos trabalhar com uma key.
 
 Para ser mais fácil de gerenciar os dados (de leitura e status) iremos criar uma classe para eles. Para isso devemos ir em "File" > "New" > "Kotlin file/ Class" ou criar uma classe interna na nossa Main Activity.
-!["Figura 22"](./img/img_20.jpg)
 
 A classe criada foi a seguinte:
 ```(kotlin):
