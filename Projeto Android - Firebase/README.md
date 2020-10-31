@@ -1,6 +1,6 @@
 # Projeto PDM - Firebase
 
-Esse projeto consiste em um aplicativo que envia e recebe dados através do [Firebase](https://rockcontent.com/br/blog/firebase/). 
+Esse projeto consiste em um aplicativo que envia e recebe dados através do [Firebase](https://rockcontent.com/br/blog/firebase/).
 
 O recebimento dos dados pode ser observado através de uma mensagem na tela e imagens. O envio é feito por meio de botões no aplicativo. Desta forma, a primeira coisa a ser feita é entrar no site do Firebase (clicando [aqui](https://firebase.google.com)) e logar na sua conta do Google. Após isso você deverá clicar na opção abaixo:
 
@@ -42,7 +42,7 @@ Iremos usar uma empty activity.
 !["Figura 12"](./img/img_1.jpg)
 
 Ao criarmos o projeto teremos o nome do pacote na MainActivity
-``` (change)>
+``` (kotlin)>
 package com.example.esp8266_firebase
 ```
 Voltando ao firebase, faça os passos seguintes:
@@ -71,7 +71,7 @@ O contexto do aplicativo é que ele exiba o estado do solo de uma planta, atrav�
 
 Após isso, na nossa actitivy principal, iremos criar uma variável lateinit para os componentes criados e os resgatar através do método findViewByID:
 
-``` (change):
+``` (kotlin):
 package com.example.esp8266_firebase
 
 import ...
@@ -92,5 +92,86 @@ Class MainActivity : AppCompatActivity() {
           this.tvStatus = findViewById(R.id.tvStatus)
     }     
 ```
+Para que possamos inserir os dados no firebase precisamos criar uma instância para isso:
+``` (kotlin):
+var database = FirebaseDatabase.getInstance().reference
+```
+Para atribuir um valor em uma posição qualquer do Database basta que façamos o seguinte:
+```
+database.setValue("IFPB")
+```
 
+Entretanto, para os fins da aplicação teremos os campos "bomba", "leitura" e "status". Como dito anteriormente, iremos enviar o valor de "on" e "off" para o campo "bomba" do firease através do clique do botão, assim: 
+
+``` (kotlin):
+ btRegar.setOnClickListener(){
+            database.child("bomba").setValue("on")
+            Toast.makeText(this,"Rega Iniciada",Toast.LENGTH_SHORT).show()
+        }
+
+        btParar.setOnClickListener(){
+            database.child("bomba").setValue("off")
+            Toast.makeText(this,"Rega Finalizada",Toast.LENGTH_SHORT).show()
+        }
+
+```
+
+Vale salientar que desta maneira o valor que será inserido irá substituir o valor anterior. Se quisermos manter os valores enquanto adicionamos novos, para o mesmo "filho", devemos trabalhar com uma key.
+
+Para ser mais fácil de gerenciar os dados (de leitura e status) iremos criar uma classe para eles. Para isso devemos ir em "File" > "New" > "Kotlin file/ Class" ou criar uma classe interna na nossa Main Activity.
+!["Figura 22"](./img/img_20.jpg)
+
+A classe criada foi a seguinte:
+```(kotlin):
+package com.example.esp8266_firebase
+
+class Dados {
+    var leitura: Int
+    var status: String
+
+    constructor(leitura: Int, status: String){
+        this.leitura = leitura
+        this.status = status
+    }
+}
+```
+Para ler os valores do firebase iremos criar instancia para o ValueEventListner, implementenado dois métodos como abaixo:
+
+``` (kotlin):
+var getdata = object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                var map = p0.value as Map<String, Any>
+
+                var dados = Dados( map["leitura"].toString().toInt(),  map["status"].toString())
+
+                tvStatus.text = "A umidade lida foi de ${dados.leitura} \n A sua plantinha está com o solo ${dados.status}"
+
+                setImage(dados.status)
+
+            }
+        }
+```
+Usamos o Map para pegarmos uma lista com todas as strings disponíveis e assim podermos exibir os valores de status e leitura (como inteiro).
+
+Após isso é importante usar os métodos addValueEventListener() e addListenerForSingleValueEvent() para ler dados em um caminho e detectar as alterações, assim, adicionando um ValueEventListener ao DatabaseReference. Então ainda na nossa função onCreate iremos adicionar o seguinte código:
+``` (kotlin):
+database.addValueEventListener(getdata)
+database.addListenerForSingleValueEvent(getdata)
+```
+
+Como dito antes, o valor do status implicará numa mudança de imagem na aplicação. Para isso, criamos uma função chamada setImage que obedece as seguintes condições:
+``` (kotlin):
+fun setImage( status : String){
+        val img = ivImagem
+        when(status){
+            "seco" -> img.setImageResource(R.drawable.ic_img1)
+            "moderado" -> img.setImageResource(R.drawable.ic_img2)
+            "encharcado" -> img.setImageResource(R.drawable.ic_img3)
+            else -> img.setImageResource(R.drawable.ic_img4)
+        }
+    }
+```
 
