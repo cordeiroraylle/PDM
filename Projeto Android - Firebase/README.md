@@ -105,16 +105,21 @@ Entretanto, para os fins da aplicação teremos os campos "bomba", "leitura" e "
 
 ``` (kotlin):
  btRegar.setOnClickListener(){
-            database.child("bomba").setValue("on")
-            Toast.makeText(this,"Rega Iniciada",Toast.LENGTH_SHORT).show()
-        }
+    database.child("bomba").setValue("on")
+    Toast.makeText(this,"Rega Iniciada",Toast.LENGTH_SHORT).show()
+ }
+ 
+```
+!["Figura 24"](./img/img_24.jpg)
 
-        btParar.setOnClickListener(){
-            database.child("bomba").setValue("off")
-            Toast.makeText(this,"Rega Finalizada",Toast.LENGTH_SHORT).show()
-        }
+``` (kotlin):
+ btParar.setOnClickListener(){
+    database.child("bomba").setValue("off")
+    Toast.makeText(this,"Rega Finalizada",Toast.LENGTH_SHORT).show()
+ }
 
 ```
+!["Figura 25"](./img/img_25.jpg)
 
 Vale salientar que desta maneira o valor que será inserido irá substituir o valor anterior. Se quisermos manter os valores enquanto adicionamos novos, para o mesmo "filho", devemos trabalhar com uma key.
 
@@ -174,4 +179,6 @@ fun setImage( status : String){
         }
     }
 ```
+Assim, as nossas possíveis telas são:
 
+!["Figura 26"](./img/img_26.jpg)
