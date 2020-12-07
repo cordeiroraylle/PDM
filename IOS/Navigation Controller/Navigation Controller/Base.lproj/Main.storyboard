@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jat-GJ-gZi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tela1 View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="Tela1ViewController" customModule="Navigation_Controller" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tela 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVu-b8-V1M">
+                                <rect key="frame" x="20" y="406" width="374" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OVu-b8-V1M" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0zi-Qt-g3a"/>
+                            <constraint firstItem="OVu-b8-V1M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2Lv-Up-EZk"/>
+                            <constraint firstItem="OVu-b8-V1M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="318" id="GI4-L3-u76"/>
+                            <constraint firstItem="OVu-b8-V1M" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="PXQ-Ud-A8l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="x5k-Vb-u11">
+                        <barButtonItem key="rightBarButtonItem" title="tela 2" id="kxB-Ut-KAR">
+                            <connections>
+                                <segue destination="72L-7I-20q" kind="show" identifier="tela1_tela2" id="59Z-SN-hAm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844.92753623188412" y="90.401785714285708"/>
+        </scene>
+        <!--Tela2 View Controller-->
+        <scene sceneID="qZe-Ve-Ocg">
+            <objects>
+                <viewController id="72L-7I-20q" customClass="Tela2ViewController" customModule="Navigation_Controller" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GZK-g5-hCF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tela 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmF-dQ-6gZ">
+                                <rect key="frame" x="20" y="406" width="374" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kmF-dQ-6gZ" firstAttribute="centerY" secondItem="GZK-g5-hCF" secondAttribute="centerY" id="L7Z-it-LTZ"/>
+                            <constraint firstItem="kmF-dQ-6gZ" firstAttribute="trailing" secondItem="GZK-g5-hCF" secondAttribute="trailingMargin" id="b4O-c0-H7K"/>
+                            <constraint firstItem="kmF-dQ-6gZ" firstAttribute="leading" secondItem="GZK-g5-hCF" secondAttribute="leadingMargin" id="fsE-73-YkO"/>
+                            <constraint firstItem="kmF-dQ-6gZ" firstAttribute="top" secondItem="adX-n3-gmq" secondAttribute="top" constant="318" id="hHI-QA-vsC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="adX-n3-gmq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="blO-KF-TEZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XIr-5B-tKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1557.9710144927537" y="89.732142857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3RK-fp-TAI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jat-GJ-gZi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nJg-aU-FTt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z8x-oE-hOa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPR-aN-yS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65.217391304347828" y="90.401785714285708"/>
+        </scene>
+    </scenes>
+</document>
